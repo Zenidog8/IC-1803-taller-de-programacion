@@ -2,19 +2,19 @@ def binario_a_decimal(binario, decimal=0, i=0):
     '''Convierte un número binario a decimal'''
     if binario == 0:
         return decimal
-    else:
-        digito = binario % 10
-        decimal = decimal + digito * (2 ** i)
-        binario = binario // 10
-        return binario_a_decimal(binario, decimal, i + 1)
+    
+    digito = binario % 10
+    decimal = decimal + digito * (2 ** i)
+    binario = binario // 10
+    return binario_a_decimal(binario, decimal, i + 1)
 
 
 def decimal_a_binario(decimal):
     '''Convierte un número decimal a binario'''
     if decimal == 0:
         return 0
-    else:
-        return (decimal % 2 + 10 * decimal_a_binario(decimal // 2))
+
+    return (decimal % 2 + 10 * decimal_a_binario(decimal // 2))
 
 
 def potencia(base, exponente):
@@ -23,12 +23,12 @@ def potencia(base, exponente):
         return 1
     elif exponente == 1:
         return base
-    else:
-        media_potencia = potencia(base, exponente // 2)
-        resultado = media_potencia * media_potencia
-        if exponente % 2 == 1:
-            resultado *= base
-        return resultado
+
+    media_potencia = potencia(base, exponente // 2)
+    resultado = media_potencia * media_potencia
+    if exponente % 2 == 1:
+        resultado *= base
+    return resultado
 
 
 def main():
