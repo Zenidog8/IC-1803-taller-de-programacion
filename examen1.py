@@ -81,10 +81,10 @@ def fac(n):
     return n * fac(n - 1)
 
 
-def suma_indice(n, k):
+def indice(n, k):
     if (n < k):
         return 1
-    return (2 * k) * suma_indice(n, k + 1)
+    return (2 * k) * indice(n, k + 1)
 
 
 def suma_derecha(j, i):
@@ -100,7 +100,7 @@ def suma_izq(i, n):
 
 
 def sum_r(n):
-    i = suma_indice(1, n)
+    i = indice(1, n)
     suma = suma_izq(i, fac(4 * n * n))
     return suma
 
