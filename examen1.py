@@ -83,8 +83,8 @@ def fac(n):
 
 def suma_indice(n, k):
     if (n < k):
-        return 0
-    return (2 * k) + suma_indice(n, k + 1)
+        return 1
+    return (2 * k) * suma_indice(n, k + 1)
 
 
 def suma_derecha(j, i):
