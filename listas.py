@@ -54,11 +54,32 @@ def norma(lista):
     return sqrt(suma)
 
 
+def moda(lista):
+    if len(lista) == 1:
+        return lista[0]
+    
+    lista = quick_sort(lista)
+    res, actual = lista[0], lista[0]
+    maximo,contador = 1, 1
+
+    for i in range(1, len(lista)):
+        if lista[i] == actual:
+            contador += 1
+        else:
+            if contador > maximo:
+                res = actual
+                maximo = contador
+            actual = lista[i]
+            contador = 1
+    return res
+
+
 def main():
     lista = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3]
     print("Media:", media(lista))
     print("Mediana:", mediana(lista))
     print("Norma:", norma(lista))
+    print("Moda:", moda(lista))
 
 
 if __name__ == "__main__":
