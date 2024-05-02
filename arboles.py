@@ -96,3 +96,11 @@ print(arbol)
 #    4   7
 #   /     \
 #  2       8
+
+
+def altura(arbol):
+    if arbol == []:
+        return 0
+    return 1 + max(altura(arbol[izq]), altura(arbol[der]))
+
+print(altura(arbol))  # 3
