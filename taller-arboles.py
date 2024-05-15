@@ -52,7 +52,7 @@ def altura_n(arbol, n):
     return max(altura_n(arbol[izq], n), altura_n(arbol[der], n))
 
 
-print("altura del subarbol que tenga como raiz el valor 7:", altura_n(arbol, 7))  # 1
+print("altura del subarbol que tenga como raiz el valor 7:", altura_n(arbol, 7))  # 2
 print("altura del subarbol que tenga como raiz el valor 20:",
       altura_n(arbol, 20))  # -1
 
