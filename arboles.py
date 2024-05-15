@@ -163,7 +163,7 @@ print("es_arbol_lleno:", es_arbol_lleno(arbol))
 def es_arbol_balanceado(arbol):
     if arbol == []:
         return True
-    return abs(altura(arbol[izq]) - altura(arbol[der])) < 2
+    return abs(altura(arbol[izq]) - altura(arbol[der])) < 2 and es_arbol_balanceado(arbol[izq]) and es_arbol_balanceado(arbol[der])
 
 
 print("es_arbol_balanceado:", es_arbol_balanceado(arbol))
