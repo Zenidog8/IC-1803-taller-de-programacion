@@ -103,4 +103,67 @@ def altura(arbol):
         return 0
     return 1 + max(altura(arbol[izq]), altura(arbol[der]))
 
-print(altura(arbol))  # 3
+
+print("altura:", altura(arbol))
+
+
+def inorden(arbol):
+    if arbol == []:
+        return []
+    return inorden(arbol[izq]) + [arbol[valor]] + inorden(arbol[der])
+
+
+print("inorden:", inorden(arbol))
+
+
+def preorden(arbol):
+    if arbol == []:
+        return []
+    return [arbol[valor]] + preorden(arbol[izq]) + preorden(arbol[der])
+
+
+print("preorden:", preorden(arbol))
+
+
+def postorden(arbol):
+    if arbol == []:
+        return []
+    return postorden(arbol[izq]) + postorden(arbol[der]) + [arbol[valor]]
+
+
+print("postorden:", postorden(arbol))
+
+
+def es_arbol_binario_busqueda(arbol):
+    if arbol == []:
+        return True
+    if arbol[izq] != [] and arbol[izq][valor] > arbol[valor]:
+        return False
+    if arbol[der] != [] and arbol[der][valor] < arbol[valor]:
+        return False
+    return es_arbol_binario_busqueda(arbol[izq]) and es_arbol_binario_busqueda(arbol[der])
+
+
+print("es_arbol_binario_busqueda:", es_arbol_binario_busqueda(arbol))
+
+
+def es_arbol_lleno(arbol):
+    if arbol == []:
+        return True
+    if arbol[izq] == [] and arbol[der] != []:
+        return False
+    if arbol[izq] != [] and arbol[der] == []:
+        return False
+    return es_arbol_lleno(arbol[izq]) and es_arbol_lleno(arbol[der])
+
+
+print("es_arbol_lleno:", es_arbol_lleno(arbol))
+
+
+def es_arbol_balanceado(arbol):
+    if arbol == []:
+        return True
+    return abs(altura(arbol[izq]) - altura(arbol[der])) < 2
+
+
+print("es_arbol_balanceado:", es_arbol_balanceado(arbol))
